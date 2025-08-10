@@ -14,6 +14,12 @@ func Draw(height int, level int) {
 		log.SetPrefix("[ERROR] ")
 		log.Fatal(error)
 	}
+	if level < 0 {
+		error := errors.New("invalid level")
+		log.SetFlags(0)
+		log.SetPrefix("[ERROR] ")
+		log.Fatal(error)
+	}
 
 	if level > height {
 		return
